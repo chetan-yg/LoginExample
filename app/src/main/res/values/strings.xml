@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">LoginExample</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+
+    <!--Login Screen-->
+    <string name="welcome_user_auth">Welcome</string>
+    <string name="enter_login_details_auth">Please enter your login credentials</string>
+    <string name="username_auth">Username</string>
+    <string name="password_auth">Password</string>
+    <string name="forgot_password_auth">Forgot Password?</string>
+    <string name="dont_have_account_auth">Don\'t have an account?<b> <font color='#020C7D'>Register</font></b></string>
+    <string name="login_auth">Login</string>
+    <string name="enter_mobile_number_auth">Please enter your registered mobile number</string>
+    <string name="will_send_you_otp_auth">We will send you OTP, carrier charges may apply.</string>
+    <string name="phone_number_auth">Phone Number</string>
+    <string name="phone_number_0_auth">0 0 0 0 0 0 0 0 0</string>
+    <string name="enter_valid_phone_auth">Enter valid phone number</string>
+    <string name="enter_valid_username_auth">Enter valid username</string>
+    <string name="enter_valid_password_auth">Enter valid password</string>
+    <string name="unable_to_login_auth">Unable to login, Please try again after sometime</string>
+
+
+    <string name="logo_transition">logo_transition</string>
+</resources>
