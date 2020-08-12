@@ -3,6 +3,7 @@ package com.chetanyg.loginexample.ui.splash
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.core.app.ActivityOptionsCompat
 import com.chetanyg.core.BaseActivity
@@ -25,8 +26,7 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding, SplashScr
     }
 
     private fun navigateInside() {
-        val handler = Handler()
-        handler.postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, LoginActivity::class.java)
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this,
@@ -34,7 +34,6 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding, SplashScr
                 getString(R.string.logo_transition)
             )
             startActivity(intent, options.toBundle())
-
         }, 1000)
     }
 }

@@ -29,7 +29,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Login failed", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.unable_to_login_auth), Toast.LENGTH_LONG)
+                    .show()
             }
         })
 

@@ -1,4 +1,4 @@
-package com.chetanyg.loginexample.network
+package com.chetanyg.core.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

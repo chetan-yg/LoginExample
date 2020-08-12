@@ -23,7 +23,7 @@
             android:layout_width="@dimen/icon_large"
             android:layout_height="@dimen/icon_large"
             android:src="@drawable/ic_android_white"
-            android:tint="@color/colorPrimary"
+            app:tint="@color/colorPrimary"
             android:transitionName="@string/logo_transition"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
