@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.core.app.ActivityOptionsCompat
-import com.chetanyg.core.BaseActivity
+import com.chetanyg.core.base.BaseActivity
 import com.chetanyg.loginexample.BR
 import com.chetanyg.loginexample.R
 import com.chetanyg.loginexample.databinding.ActivitySplashScreenBinding

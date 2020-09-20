@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.login.otp.OtpFragment">
+
+    <data>
+
+        <variable
+            name="otpVM"
+            type="com.chetanyg.loginexample.ui.login.otp.OtpViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_normal_le">
+
+        <TextView
+            android:id="@+id/of_tv_enter_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_extra_large_le"
+            android:text="@string/otp_verification_le"
+            android:textSize="@dimen/text_large_le"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/of_tv_enter_otp_sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_otp_le"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/of_tv_enter_otp" />
+
+
+        <com.mukesh.OtpView
+            android:id="@+id/of_tf_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="@={otpVM.otp}"
+            app:OtpItemCount="4"
+            app:OtpLineColor="@color/colorPrimary"
+            app:OtpViewType="line"
+            app:OtpItemWidth="30dp"
+            app:OtpItemSpacing="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/of_tv_enter_otp_sent" />
+
+
+        <TextView
+            android:id="@+id/of_tv_resend_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal_le"
+            android:text="@string/resend_otp_le"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/of_tf_otp" />
+
+
+        <Button
+            android:id="@+id/of_tf_otp_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large_le"
+            android:text="@string/verify_otp_btn_le"
+            android:enabled="@{otpVM.isLoading ? false : true}"
+            android:onClick="@{() -> otpVM.validateAndVerifyOtp()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/of_tv_resend_otp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

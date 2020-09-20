@@ -54,7 +54,6 @@ dependencies {
     kapt "com.android.databinding:compiler:$kapt_version"
     api "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
-
     //Networking
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:converter-gson:$retrofit_version"
