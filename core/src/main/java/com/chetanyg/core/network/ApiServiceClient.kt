@@ -18,6 +18,7 @@ object ApiServiceClient {
             interceptor.level = HttpLoggingInterceptor.Level.BODY
             okHttpClient = OkHttpClient.Builder()
                 .addInterceptor(interceptor)
+                .addInterceptor(MockInterceptor())
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20, TimeUnit.SECONDS)
                 .writeTimeout(20, TimeUnit.SECONDS)

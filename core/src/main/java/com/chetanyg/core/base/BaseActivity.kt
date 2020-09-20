@@ -1,4 +1,4 @@
-package com.chetanyg.core
+package com.chetanyg.core.base
 
 import android.content.Context
 import android.os.Bundle

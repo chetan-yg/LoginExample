@@ -5,15 +5,7 @@
     <color name="colorAccent">#EF5350</color>
 
     <!--Text-->
-    <color name="colorPrimaryTextAuth">#2B2B2B</color>
-    <color name="colorSecondaryTextAuth">#FFFFFF</color>
-    <color name="colorLightDarkTextAuth">#898989</color>
-    <color name="colorDarkPrimaryTextAuth">#4E4E4E</color>
-    <color name="colorLightGreenAuth">#62C556</color>
 
     <!--General-->
-    <color name="lineColorAuth">#80050F81</color>
-    <color name="disabledAuth">#808080</color>
-    <color name="colorWhiteAuth">#FFFFFF</color>
 
 </resources>

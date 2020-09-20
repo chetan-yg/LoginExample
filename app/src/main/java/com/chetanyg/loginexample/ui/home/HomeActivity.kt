@@ -1,7 +1,7 @@
 package com.chetanyg.loginexample.ui.home
 
 import android.os.Bundle
-import com.chetanyg.core.BaseActivity
+import com.chetanyg.core.base.BaseActivity
 import com.chetanyg.loginexample.BR
 import com.chetanyg.loginexample.R
 import com.chetanyg.loginexample.databinding.ActivityHomeBinding

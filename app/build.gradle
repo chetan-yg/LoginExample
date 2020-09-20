@@ -41,6 +41,8 @@ dependencies {
 
     api project(':core')
 
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "com.github.mukeshsolanki:android-otpview-pinview:$otpview_version"
 
     //Test
     testImplementation "junit:junit:$junitVersion"

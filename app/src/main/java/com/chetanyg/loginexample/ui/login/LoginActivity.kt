@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import com.chetanyg.core.BaseActivity
+import com.chetanyg.core.base.BaseActivity
 import com.chetanyg.loginexample.BR
 import com.chetanyg.loginexample.R
 import com.chetanyg.loginexample.databinding.ActivityLoginBinding

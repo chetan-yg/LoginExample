@@ -19,158 +19,57 @@
         android:layout_height="match_parent"
         tools:context=".ui.login.LoginActivity">
 
-        <View
-            android:id="@+id/al_view_header"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@drawable/curved_background"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
-
-        <ImageView
-            android:id="@+id/al_img_header"
-            android:layout_width="@dimen/icon_large"
-            android:layout_height="@dimen/icon_large"
-            android:src="@drawable/ic_android_white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/auth_fl_login_container"
-            android:layout_marginStart="@dimen/margin_extra_large_auth"
-            android:transitionName="@string/logo_transition" />
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/auth_fl_login_container"
+            android:id="@+id/al_header_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/al_view_header"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/curved_background"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/al_img_header"
+                android:layout_width="@dimen/icon_large"
+                android:layout_height="@dimen/icon_large"
+                android:layout_marginStart="@dimen/margin_extra_large_le"
+                android:src="@drawable/ic_android_white"
+                android:transitionName="@string/logo_transition"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/margin_large_auth"
-            app:layout_constraintTop_toBottomOf="@+id/al_view_header"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:isScrollContainer="true"
+            android:measureAllChildren="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@+id/al_header_container"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/auth_fl_til_username"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            <fragment
+                android:id="@+id/auth_aa_nav_host_jt"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="42dp"
-                android:hint="@string/username_auth"
-                app:boxCornerRadiusBottomEnd="@dimen/radius_extra_large_auth"
-                app:boxCornerRadiusBottomStart="@dimen/radius_extra_large_auth"
-                app:boxCornerRadiusTopEnd="@dimen/radius_extra_large_auth"
-                app:boxCornerRadiusTopStart="@dimen/radius_extra_large_auth"
-                app:errorEnabled="true"
-                app:error="@{login_vm.emailErrorMessage}"
-                app:layout_constraintBottom_toTopOf="@+id/auth_fl_til_password"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/login_navigation" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/auth_fl_tie_username"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="textEmailAddress"
-                    android:text="@={login_vm.userName}"
-                    android:textColor="@color/colorPrimaryTextAuth"
-                    android:textSize="@dimen/text_normal_auth" />
+        </androidx.core.widget.NestedScrollView>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/auth_fl_til_password"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small_auth"
-                android:hint="@string/password_auth"
-                app:boxCornerRadiusBottomEnd="@dimen/radius_extra_large_auth"
-                app:boxCornerRadiusBottomStart="@dimen/radius_extra_large_auth"
-                app:boxCornerRadiusTopEnd="@dimen/radius_extra_large_auth"
-                app:boxCornerRadiusTopStart="@dimen/radius_extra_large_auth"
-                app:endIconMode="password_toggle"
-                app:endIconTint="@color/colorLightDarkTextAuth"
-                app:errorEnabled="true"
-                app:error="@{login_vm.passwordErrorMessage}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/auth_fl_til_username">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/auth_fl_tie_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="textPassword"
-                    android:textColor="@color/colorPrimaryTextAuth"
-                    android:textSize="@dimen/text_normal_auth"
-                    android:text="@={login_vm.password}" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/auth_fl_tv_forgot_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small_auth"
-                android:text="@string/forgot_password_auth"
-                android:textColor="@color/colorPrimaryTextAuth"
-                android:textSize="@dimen/text_normal_auth"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/auth_fl_til_password" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/auth_fl_loader_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="35.5dp"
-                android:layout_marginTop="@dimen/margin_super_large_auth"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/auth_fl_tv_forgot_password">
-
-                <Button
-                    android:id="@+id/auth_ah_btn_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_normal_height_auth"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="@string/login_auth"
-                    android:onClick="@{() -> login_vm.validateAndLogin()}"
-                    android:textColor="@color/colorSecondaryTextAuth"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:visibility="@{login_vm.isLoading ? View.GONE : View.VISIBLE}" />
-
-                <ProgressBar
-                    android:id="@+id/auth_ah_progressbar_login"
-                    android:layout_width="@dimen/button_normal_height_auth"
-                    android:layout_height="@dimen/button_normal_height_auth"
-                    android:background="@drawable/round_backhround"
-                    android:indeterminateTint="@android:color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:visibility="@{login_vm.isLoading ? View.VISIBLE : View.GONE}" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/auth_fl_tv_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_super_large_auth"
-                android:text="@string/dont_have_account_auth"
-                android:textColor="@color/colorPrimaryTextAuth"
-                android:textSize="@dimen/text_normal_auth"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/auth_fl_loader_view" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
