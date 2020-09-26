@@ -1,15 +1,9 @@
 <resources>
-
     <!-- Strings related to login -->
-    <string name="welcome">"Welcome !"</string>
     <string name="enter_valid_username_auth">Enter valid username</string>
     <string name="enter_valid_password_auth">Enter valid password</string>
     <string name="unable_to_login_auth">Unable to login, Please try again after sometime</string>
-
-
     <string name="logo_transition">logo_transition</string>
-
-
     <string name="phone_number_label_le">"Phone number"</string>
     <string name="generate_otp_le">Generate Otp</string>
     <string name="enter_your_phone_number_le">Enter your Phone Number</string>
@@ -22,5 +16,4 @@
     <string name="enter_otp_le">Enter the OTP sent to</string>
     <string name="verify_otp_btn_le">Verify &amp; Continue</string>
     <string name="resend_otp_le">Didn\'t receive OTP?<b> <font color='#020C7D'> RESEND</font></b></string>
-
 </resources>
