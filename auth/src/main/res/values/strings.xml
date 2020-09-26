@@ -1,0 +1,19 @@
+<resources>
+    <!-- Strings related to login -->
+    <string name="enter_valid_username_auth">Enter valid username</string>
+    <string name="enter_valid_password_auth">Enter valid password</string>
+    <string name="unable_to_login_auth">Unable to login, Please try again after sometime</string>
+    <string name="logo_transition">logo_transition</string>
+    <string name="phone_number_label_le">"Phone number"</string>
+    <string name="generate_otp_le">Generate Otp</string>
+    <string name="enter_your_phone_number_le">Enter your Phone Number</string>
+    <string name="we_will_snd_otp_le">We will send you the 4 digit verification code</string>
+    <string name="enter_valid_phone_number">Enter valid phone number</string>
+    <string name="failed_to_send_otp">Failed to send otp, Please try again later</string>
+    <string name="failed_to_verify_otp">Invalid OTP, Please try again!</string>
+    <string name="otp_verification_success_le">OTP Verified</string>
+    <string name="otp_verification_le">OTP Verification</string>
+    <string name="enter_otp_le">Enter the OTP sent to</string>
+    <string name="verify_otp_btn_le">Verify &amp; Continue</string>
+    <string name="resend_otp_le">Didn\'t receive OTP?<b> <font color='#020C7D'> RESEND</font></b></string>
+</resources>
