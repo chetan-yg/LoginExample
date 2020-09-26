@@ -6,11 +6,11 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.core.app.ActivityOptionsCompat
+import com.chetanyg.auth.ui.login.LoginActivity
 import com.chetanyg.core.base.BaseActivity
 import com.chetanyg.loginexample.BR
 import com.chetanyg.loginexample.R
 import com.chetanyg.loginexample.databinding.ActivitySplashScreenBinding
-import com.chetanyg.loginexample.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding, SplashScreenViewModel>() {

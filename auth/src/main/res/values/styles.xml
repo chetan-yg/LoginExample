@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="LoginTheme.Transparent" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>

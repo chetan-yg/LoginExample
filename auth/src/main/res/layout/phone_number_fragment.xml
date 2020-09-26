@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.chetanyg.auth.ui.login.phonenumber.PhoneNumberFragment">
+
+    <data>
+
+        <variable
+            name="phoneNumberVM"
+            type="com.chetanyg.auth.ui.login.phonenumber.PhoneNumberViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_normal_le">
+
+        <TextView
+            android:id="@+id/pnf_tv_enter_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_extra_large_le"
+            android:text="@string/enter_your_phone_number_le"
+            android:textSize="@dimen/text_large_le"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pnf_tv_enter_phone_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/we_will_snd_otp_le"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pnf_tv_enter_phone" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pnf_tf_phonenumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large_le"
+            android:hint="@string/phone_number_label_le"
+            app:error="@{phoneNumberVM.phoneErrorMessage}"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pnf_tv_enter_phone_otp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789+"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:maxLength="13"
+                android:maxLines="1"
+                android:text="@={phoneNumberVM.phoneNumber}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/pnf_tf_phone_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large_le"
+            android:enabled="@{phoneNumberVM.isLoading ? false : true}"
+            android:onClick="@{() -> phoneNumberVM.validateAndSendOtp()}"
+            android:text="@string/generate_otp_le"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pnf_tf_phonenumber" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
