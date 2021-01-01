@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    kapt {
+        correctErrorTypes = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    //Core
+    api "androidx.appcompat:appcompat:$appCompatVersion"
+    api "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    api "androidx.legacy:legacy-support-v4:$legacySupportv4Version"
+    api "com.android.support:cardview-v7:$cardviewVersion"
+    api "com.google.android.material:material:$materialVersion"
+
+    //Kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "androidx.core:core-ktx:$ktxVersion"
+    api "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    //JetPack
+    api "android.arch.lifecycle:extensions:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    api "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    api "androidx.navigation:navigation-ui-ktx:$nav_version"
+    kapt "com.android.databinding:compiler:$kapt_version"
+    api "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    //Networking
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    api "com.squareup.okhttp3:okhttp:$okhttp_version"
+    api "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    api "com.google.code.gson:gson:$gson_version"
+
+    //Test
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$testExtJunit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+
+}
